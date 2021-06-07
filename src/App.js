@@ -1,11 +1,18 @@
-import React from 'react';
+// Hook up useReducer
+import React, { useReducer } from 'react';
 
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
+// import in reducer/index.js and initialState
+import reducer, { initialState } from './reducers';
 
 function App() {
+  const [ state, dispatch ] = useReducer(reducer, initialState);
+   // check that you have access to initialState inside of the reducer/index.js
+    // console.log(state);
+  // put each piece of state in ui that they should be into 
 
   return (
     <div className="App">
@@ -17,10 +24,10 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={0}/>
+            <TotalDisplay value={state.total}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="operation"><b>Operation: </b>{state.operation} </span>
+              <span id="memory"><b>Memory: </b>{state.memory} </span>
             </div>
             
             <div className="row">
