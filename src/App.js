@@ -7,12 +7,17 @@ import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 // import in reducer/index.js and initialState
 import reducer, { initialState } from './reducers';
+import { addOne } from './actions';
 
 function App() {
   const [ state, dispatch ] = useReducer(reducer, initialState);
    // check that you have access to initialState inside of the reducer/index.js
     // console.log(state);
   // put each piece of state in ui that they should be into 
+
+  const handle1Click = () => {
+    dispatch(addOne());
+  };
 
   return (
     <div className="App">
@@ -37,7 +42,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton value={1} onClick={handle1Click}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
