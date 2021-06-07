@@ -5,8 +5,4 @@
 *  Goes inside of the reducer.
 *  It then takes that state and adds 1 to it.
 *  Re-renders the application with the new total
-* 
-* 
-...
-
 * TotalDisplay shows the total plus 1.
