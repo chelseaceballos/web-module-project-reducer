@@ -11,6 +11,7 @@ import {
   clearDisplay,
   createMemory,
   memoryApply,
+  memoryClear,
 } from './actions';
 
 
@@ -34,8 +35,12 @@ const handleCreateMemory = () => {
   dispatch(createMemory());
 }
 
-const handleApplyMemory = (memory) => {
-  dispatch(memoryApply(memory))
+const handleApplyMemory = () => {
+  dispatch(memoryApply());
+}
+
+const handleClearMemory = () => {
+  dispatch(memoryClear());
 }
 
   return (
@@ -57,7 +62,7 @@ const handleApplyMemory = (memory) => {
             <div className="row">
               <CalcButton value={"M+"} onClick={handleCreateMemory}/>
               <CalcButton value={"MR"} onClick={handleApplyMemory}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MC"} onClick={handleClearMemory}/>
             </div>
 
             <div className="row">
