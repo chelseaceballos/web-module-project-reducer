@@ -8,6 +8,7 @@ import {
   // addOne,
   applyNumber,
   changeOperation,
+  clearDisplay
 } from './actions';
 
 
@@ -21,6 +22,10 @@ dispatch(applyNumber(number));
 
 const handleOperator = (operator) => {
   dispatch(changeOperation(operator));
+}
+
+const handleClear = () => {
+  dispatch(clearDisplay());
 }
 
   return (
@@ -70,7 +75,7 @@ const handleOperator = (operator) => {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={handleClear}/>
             </div>
 
           </form>
