@@ -10,7 +10,7 @@ import {
   changeOperation,
   clearDisplay,
   createMemory,
-
+  memoryApply,
 } from './actions';
 
 
@@ -34,6 +34,10 @@ const handleCreateMemory = () => {
   dispatch(createMemory());
 }
 
+const handleApplyMemory = (memory) => {
+  dispatch(memoryApply(memory))
+}
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -52,7 +56,7 @@ const handleCreateMemory = () => {
             
             <div className="row">
               <CalcButton value={"M+"} onClick={handleCreateMemory}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton value={"MR"} onClick={handleApplyMemory}/>
               <CalcButton value={"MC"}/>
             </div>
 
