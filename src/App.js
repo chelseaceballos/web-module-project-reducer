@@ -8,7 +8,9 @@ import {
   // addOne,
   applyNumber,
   changeOperation,
-  clearDisplay
+  clearDisplay,
+  createMemory,
+
 } from './actions';
 
 
@@ -28,6 +30,10 @@ const handleClear = () => {
   dispatch(clearDisplay());
 }
 
+const handleCreateMemory = () => {
+  dispatch(createMemory());
+}
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -45,7 +51,7 @@ const handleClear = () => {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"} />
+              <CalcButton value={"M+"} onClick={handleCreateMemory}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>

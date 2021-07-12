@@ -8,3 +8,6 @@
 ...
 
 * TotalDisplay shows the total plus 1.
+
+
+reducer case => action creator => UI connection
